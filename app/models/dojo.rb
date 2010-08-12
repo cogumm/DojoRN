@@ -3,6 +3,6 @@ class Dojo < ActiveRecord::Base
   has_and_belongs_to_many :users
 
   def after_initialize
-    self.time ||= 7
+    self.time ||= 5
   end
 end

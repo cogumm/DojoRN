@@ -1,14 +1,12 @@
 <h1><%= @dojo.name %> <span><%= link_to("(editar)", edit_dojo_url(@dojo))%></span></h1>
 <div id="countdown"></div>
-<div id="participants">
-	<%# if user? -%>
-		<h2>Participantes <%= @user %><span>quero participar também</span> <%= @dojos_users %></h2>
-	<%# end %>
-</div>
 <p>
   <input type="button" name="pause" id="pause" value="Start">
   <input type="button" name="restart" id="restart" value="Restart">
 </p>
+<div id="participants">
+  <h2>Participantes <%= @user %><span>quero participar também</span> <%= @dojos_users %></h2>
+</div>
 <% content_for(:javascripts) do %>
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
 <%= javascript_include_tag "jquery.countdown.pack.js" %>

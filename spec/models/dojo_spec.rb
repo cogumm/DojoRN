@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe Dojo do
   let(:user) do
-    User.new(:twitter => 'caironoleto')
+    User.new(:twitter => 'cogumm')
   end
 
   subject do

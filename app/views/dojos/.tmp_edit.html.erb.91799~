@@ -3,8 +3,8 @@
   <%= render :partial => 'write', :locals => { :f => f } %>
 
   <p>
-    <%= f.submit 'Salvar' %>
+    <%= f.submit %>
   </p>
 
-  <p><%= link_to 'voltar', dojos_path %></p>
+  <p><%= link_to 'voltar', @dojo %></p>
 <% end %>

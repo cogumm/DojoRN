@@ -2188,3 +2188,364 @@ Migrating to AddTimeToDojos (20100807110200)
   [4;35;1mSQL (1.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
   [4;36;1mSQL (0.9ms)[0m   [0;1mdescribe `users`[0m
   [4;35;1mSQL (0.6ms)[0m   [0mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (217.6ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (116.5ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DojosController#index (for 127.0.0.1 at 2010-08-12 09:13:20) [GET]
+  [4;36;1mDojo Load (625.1ms)[0m   [0;1mSELECT * FROM `dojos` [0m
+Rendering template within layouts/application
+Rendering dojos/index
+Completed in 816ms (View: 135, DB: 959) | 200 OK [http://0.0.0.0/]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DojosController#index (for 127.0.0.1 at 2010-08-12 09:15:27) [GET]
+  [4;35;1mDojo Load (53.1ms)[0m   [0mSELECT * FROM `dojos` [0m
+Rendering template within layouts/application
+Rendering dojos/index
+Completed in 76ms (View: 3, DB: 54) | 200 OK [http://localhost/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DojosController#new (for 127.0.0.1 at 2010-08-12 09:15:29) [GET]
+  [4;36;1mDojo Columns (286.8ms)[0m   [0;1mSHOW FIELDS FROM `dojos`[0m
+Rendering template within layouts/application
+Rendering dojos/new
+Rendered dojos/_write (54.1ms)
+Completed in 517ms (View: 208, DB: 287) | 200 OK [http://localhost/dojos/new]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DojosController#create (for 127.0.0.1 at 2010-08-12 09:15:35) [POST]
+  Parameters: {"commit"=>"Save changes", "authenticity_token"=>"G/hjLnZJjmm9+C7AkAaNIs09NrGqsfgVYPgv60+ivJw=", "dojo"=>{"name"=>"DojoRN", "time"=>"5"}}
+  [4;35;1mDojo Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `dojos`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mDojo Create (208.6ms)[0m   [0mINSERT INTO `dojos` (`name`, `created_at`, `updated_at`, `time`) VALUES('DojoRN', '2010-08-12 12:15:35', '2010-08-12 12:15:35', 5)[0m
+  [4;36;1mSQL (160.7ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://localhost:3002/dojos/1
+Completed in 405ms (DB: 371) | 302 Found [http://localhost/dojos]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DojosController#show (for 127.0.0.1 at 2010-08-12 09:15:35) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mDojo Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `dojos`[0m
+  [4;36;1mDojo Load (56.1ms)[0m   [0;1mSELECT * FROM `dojos` WHERE (`dojos`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering dojos/show
+Completed in 130ms (View: 51, DB: 58) | 200 OK [http://localhost/dojos/1]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DojosController#show (for 127.0.0.1 at 2010-08-12 09:17:40) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mDojo Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `dojos`[0m
+  [4;36;1mDojo Load (0.2ms)[0m   [0;1mSELECT * FROM `dojos` WHERE (`dojos`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering dojos/show
+
+ActionView::TemplateError (undefined method `user?' for #<ActionView::Base:0xb6f37558>) on line #8 of app/views/dojos/show.html.erb:
+5:   <input type="button" name="restart" id="restart" value="Restart">
+6: </p>
+7: <div id="participants">
+8: 	<% if user? -%>
+9: 		<h2>Participantes <%= @user %><span>quero participar também</span> <%= @dojos_users %></h2>
+10: 	<% end %>
+11: </div>
+
+    app/views/dojos/show.html.erb:8
+    -e:2:in `load'
+    -e:2
+
+Rendered rescues/_trace (105.2ms)
+Rendered rescues/_request_and_response (13.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DojosController#show (for 127.0.0.1 at 2010-08-12 09:23:57) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mDojo Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `dojos`[0m
+  [4;36;1mDojo Load (0.3ms)[0m   [0;1mSELECT * FROM `dojos` WHERE (`dojos`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering dojos/show
+Completed in 41ms (View: 17, DB: 2) | 200 OK [http://localhost/dojos/1]
+  [4;35;1mSQL (1.5ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DojosController#index (for 127.0.0.1 at 2010-08-12 09:24:02) [GET]
+  [4;35;1mDojo Load (47.9ms)[0m   [0mSELECT * FROM `dojos` [0m
+  [4;36;1mDojo Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `dojos`[0m
+Rendering template within layouts/application
+Rendering dojos/index
+Completed in 76ms (View: 5, DB: 51) | 200 OK [http://localhost/dojos]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DojosController#show (for 127.0.0.1 at 2010-08-12 09:24:32) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mDojo Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `dojos`[0m
+  [4;36;1mDojo Load (0.2ms)[0m   [0;1mSELECT * FROM `dojos` WHERE (`dojos`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering dojos/show
+Completed in 27ms (View: 5, DB: 2) | 200 OK [http://localhost/dojos/1]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DojosController#show (for 127.0.0.1 at 2010-08-12 09:24:53) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mDojo Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `dojos`[0m
+  [4;36;1mDojo Load (0.2ms)[0m   [0;1mSELECT * FROM `dojos` WHERE (`dojos`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering dojos/show
+Completed in 28ms (View: 5, DB: 2) | 200 OK [http://localhost/dojos/1]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DojosController#show (for 127.0.0.1 at 2010-08-12 09:25:09) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mDojo Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `dojos`[0m
+  [4;36;1mDojo Load (0.2ms)[0m   [0;1mSELECT * FROM `dojos` WHERE (`dojos`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering dojos/show
+Completed in 35ms (View: 6, DB: 2) | 200 OK [http://localhost/dojos/1]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DojosController#show (for 127.0.0.1 at 2010-08-12 09:25:22) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mDojo Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `dojos`[0m
+  [4;36;1mDojo Load (0.2ms)[0m   [0;1mSELECT * FROM `dojos` WHERE (`dojos`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering dojos/show
+Completed in 28ms (View: 6, DB: 2) | 200 OK [http://localhost/dojos/1]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DojosController#show (for 127.0.0.1 at 2010-08-12 09:25:43) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mDojo Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `dojos`[0m
+  [4;36;1mDojo Load (0.2ms)[0m   [0;1mSELECT * FROM `dojos` WHERE (`dojos`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering dojos/show
+Completed in 30ms (View: 6, DB: 2) | 200 OK [http://localhost/dojos/1]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DojosController#show (for 127.0.0.1 at 2010-08-12 09:26:03) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mDojo Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `dojos`[0m
+  [4;36;1mDojo Load (0.2ms)[0m   [0;1mSELECT * FROM `dojos` WHERE (`dojos`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering dojos/show
+Completed in 152ms (View: 19, DB: 2) | 200 OK [http://localhost/dojos/1]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DojosController#show (for 127.0.0.1 at 2010-08-12 09:26:19) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mDojo Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `dojos`[0m
+  [4;36;1mDojo Load (0.2ms)[0m   [0;1mSELECT * FROM `dojos` WHERE (`dojos`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering dojos/show
+Completed in 50ms (View: 20, DB: 2) | 200 OK [http://localhost/dojos/1]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DojosController#show (for 127.0.0.1 at 2010-08-12 09:26:38) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mDojo Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `dojos`[0m
+  [4;36;1mDojo Load (0.2ms)[0m   [0;1mSELECT * FROM `dojos` WHERE (`dojos`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering dojos/show
+Completed in 41ms (View: 18, DB: 2) | 200 OK [http://localhost/dojos/1]
+  [4;35;1mSQL (0.7ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DojosController#show (for 127.0.0.1 at 2010-08-12 09:26:51) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mDojo Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `dojos`[0m
+  [4;36;1mDojo Load (0.2ms)[0m   [0;1mSELECT * FROM `dojos` WHERE (`dojos`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering dojos/show
+Completed in 46ms (View: 24, DB: 2) | 200 OK [http://localhost/dojos/1]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DojosController#index (for 127.0.0.1 at 2010-08-12 09:27:15) [GET]
+  [4;35;1mDojo Load (0.5ms)[0m   [0mSELECT * FROM `dojos` [0m
+  [4;36;1mDojo Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `dojos`[0m
+Rendering template within layouts/application
+Rendering dojos/index
+Completed in 28ms (View: 5, DB: 2) | 200 OK [http://localhost/dojos]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DojosController#show (for 127.0.0.1 at 2010-08-12 09:27:37) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mDojo Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `dojos`[0m
+  [4;36;1mDojo Load (0.2ms)[0m   [0;1mSELECT * FROM `dojos` WHERE (`dojos`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering dojos/show
+Completed in 40ms (View: 18, DB: 2) | 200 OK [http://localhost/dojos/1]
+  [4;35;1mSQL (0.4ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DojosController#edit (for 127.0.0.1 at 2010-08-12 09:27:53) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mDojo Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `dojos`[0m
+  [4;36;1mDojo Load (0.2ms)[0m   [0;1mSELECT * FROM `dojos` WHERE (`dojos`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering dojos/edit
+Rendered dojos/_write (256.5ms)
+Completed in 326ms (View: 296, DB: 2) | 200 OK [http://localhost/dojos/1/edit]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DojosController#show (for 127.0.0.1 at 2010-08-12 09:28:05) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mDojo Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `dojos`[0m
+  [4;36;1mDojo Load (0.2ms)[0m   [0;1mSELECT * FROM `dojos` WHERE (`dojos`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering dojos/show
+Completed in 40ms (View: 7, DB: 2) | 200 OK [http://localhost/dojos/1]
+  [4;35;1mSQL (19.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DojosController#edit (for 127.0.0.1 at 2010-08-12 09:35:41) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mDojo Columns (28.3ms)[0m   [0mSHOW FIELDS FROM `dojos`[0m
+  [4;36;1mDojo Load (0.2ms)[0m   [0;1mSELECT * FROM `dojos` WHERE (`dojos`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering dojos/edit
+Rendered dojos/_write (3.7ms)
+Completed in 75ms (View: 23, DB: 48) | 200 OK [http://localhost/dojos/1/edit]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DojosController#edit (for 127.0.0.1 at 2010-08-12 09:36:04) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mDojo Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `dojos`[0m
+  [4;36;1mDojo Load (0.2ms)[0m   [0;1mSELECT * FROM `dojos` WHERE (`dojos`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering dojos/edit
+Rendered dojos/_write (3.0ms)
+Completed in 50ms (View: 25, DB: 2) | 200 OK [http://localhost/dojos/1/edit]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DojosController#show (for 127.0.0.1 at 2010-08-12 09:36:26) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mDojo Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `dojos`[0m
+  [4;36;1mDojo Load (0.2ms)[0m   [0;1mSELECT * FROM `dojos` WHERE (`dojos`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering dojos/show
+Completed in 42ms (View: 16, DB: 2) | 200 OK [http://localhost/dojos/1]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DojosController#index (for 127.0.0.1 at 2010-08-12 09:36:28) [GET]
+  [4;35;1mDojo Load (0.2ms)[0m   [0mSELECT * FROM `dojos` [0m
+  [4;36;1mDojo Columns (1.2ms)[0m   [0;1mSHOW FIELDS FROM `dojos`[0m
+Rendering template within layouts/application
+Rendering dojos/index
+Completed in 26ms (View: 5, DB: 2) | 200 OK [http://localhost/dojos]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DojosController#show (for 127.0.0.1 at 2010-08-12 09:36:30) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mDojo Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `dojos`[0m
+  [4;36;1mDojo Load (0.2ms)[0m   [0;1mSELECT * FROM `dojos` WHERE (`dojos`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering dojos/show
+Completed in 28ms (View: 5, DB: 2) | 200 OK [http://localhost/dojos/1]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DojosController#edit (for 127.0.0.1 at 2010-08-12 09:36:32) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mDojo Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `dojos`[0m
+  [4;36;1mDojo Load (1.4ms)[0m   [0;1mSELECT * FROM `dojos` WHERE (`dojos`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering dojos/edit
+Rendered dojos/_write (2.5ms)
+Completed in 38ms (View: 14, DB: 3) | 200 OK [http://localhost/dojos/1/edit]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DojosController#show (for 127.0.0.1 at 2010-08-12 09:36:33) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mDojo Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `dojos`[0m
+  [4;36;1mDojo Load (0.2ms)[0m   [0;1mSELECT * FROM `dojos` WHERE (`dojos`.`id` = 1) [0m
+Rendering template within layouts/application
+Rendering dojos/show
+Completed in 29ms (View: 5, DB: 2) | 200 OK [http://localhost/dojos/1]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DojosController#index (for 127.0.0.1 at 2010-08-12 09:36:34) [GET]
+  [4;35;1mDojo Load (0.3ms)[0m   [0mSELECT * FROM `dojos` [0m
+  [4;36;1mDojo Columns (1.3ms)[0m   [0;1mSHOW FIELDS FROM `dojos`[0m
+Rendering template within layouts/application
+Rendering dojos/index
+Completed in 28ms (View: 5, DB: 2) | 200 OK [http://localhost/dojos]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DojosController#new (for 127.0.0.1 at 2010-08-12 09:36:34) [GET]
+  [4;35;1mDojo Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `dojos`[0m
+Rendering template within layouts/application
+Rendering dojos/new
+Rendered dojos/_write (2.7ms)
+Completed in 33ms (View: 11, DB: 1) | 200 OK [http://localhost/dojos/new]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DojosController#new (for 127.0.0.1 at 2010-08-12 09:37:03) [GET]
+  [4;36;1mDojo Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `dojos`[0m
+Rendering template within layouts/application
+Rendering dojos/new
+Rendered dojos/_write (2.4ms)
+Completed in 43ms (View: 21, DB: 2) | 200 OK [http://localhost/dojos/new]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing DojosController#new (for 127.0.0.1 at 2010-08-12 09:38:31) [GET]
+  [4;35;1mDojo Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `dojos`[0m
+Rendering template within layouts/application
+Rendering dojos/new
+Rendered dojos/_write (2.9ms)
+Completed in 35ms (View: 10, DB: 1) | 200 OK [http://localhost/dojos/new]
