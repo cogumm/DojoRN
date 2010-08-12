@@ -1,0 +1,18 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="pt-BR"> 
+<meta name="author" CONTENT="#caravanapi"> 
+<meta name="author" CONTENT="@cogumm, @caironoleto"> 
+<meta name="author" CONTENT="#caravanapi"> 
+<meta http-equiv="Content-Language" content="pt-br"> 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF8"> 
+<meta name="keywords" content="rails, ruby on rails, desenvolvimento, caravanapi, dojo, coding dojo">
+  <head>
+    <title>Dojo Timer</title>
+    <%= stylesheet_link_tag "style", :media => "all" %>
+  </head>
+
+  <body>
+    <%= yield %>
+  </body>
+  <%= yield(:javascripts) %>
+</html>

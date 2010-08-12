@@ -1,0 +1,168 @@
+html, body {
+	margin: 0;
+	padding: 0;
+	font: 18pt Verdana, Geneva, Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+#wrapper {
+	width:1000px;
+	padding-top:300px;
+}
+
+/* timer general */
+#timer {
+	margin-left: 344px;
+	position:relative;
+}
+
+hr {
+	position:absolute;
+	top:60px;
+	left:0;
+	width:972px;
+	border:1px solid #ffffff;	
+}
+
+*:first-child+html hr {
+	top:370px;
+}
+
+
+/* timer numbers */
+.timer_numbers {
+	font-size:100px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	text-align:left;
+	color:#ffffff;
+}
+
+#timer_days {
+	background:url(/images/countdown1.png) #ffffff no-repeat;
+	float:left;
+	width:236px;
+	height:159px;
+	padding:10px 0 0 18px;
+	letter-spacing:60px;
+}
+
+#timer_hours {
+	background:url(/images/countdown1.png) #ffffff no-repeat;
+	float:left;
+	width:236px;
+	height:159px;
+	padding:10px 0 0 18px;
+	letter-spacing:60px;
+}
+
+#timer_mins {
+	background:url(/images/countdown2.png) #ffffff no-repeat;
+	float:left;
+	width:236px;
+	height:159px;
+	padding:10px 0 0 18px;
+	letter-spacing:60px;
+}
+
+#timer_seconds {
+	background:url(/images/countdown2.png) #ffffff no-repeat;
+	float:left;
+	width:210px;
+	height:138px;
+	padding:10px 0 0 22px;
+	letter-spacing:55px;
+}
+
+/* timer labels */
+.timer_labels {
+	font-size:40px;
+	font-family:Arial, Helvetica, sans-serif;
+	font-weight:bold;
+	text-align:center;
+	color:#666;	
+}
+
+#timer_labels {
+	position:relative;
+}
+
+#timer_days_label {
+	position:absolute;
+	top:150px;
+	left:58px;	
+}
+
+#timer_hours_label {
+	position:absolute;
+	top:150px;
+	left:305px;
+	
+}
+
+#timer_mins_label {
+	position:absolute;
+	top:150px;
+	left:570px;	
+}
+
+#timer_seconds_label {
+	position:absolute;
+	top:150px;
+	left:825px;
+}
+
+
+/* below style not apart of the tutorial */
+p#demoPage {
+	display:inline;
+	padding:5px;
+	background-color:#000000;
+	color:#FFFFFF;
+	margin:20px 0;
+	font-size:18px;
+}
+
+p#demoPage a {
+	color:#FFFFFF;	
+}
+
+/* @cogumm */
+#participants{
+	display: inline;
+	padding: 5px;
+	margin: 18px 0;
+	font-size: 18px;
+}
+
+#aa {
+	width: 20em;
+	padding: 5px 0em 5px;
+	margin: 4em auto 0 auto;
+	border: 1px solid #ccc;
+	border-right-color: #999;
+	border-bottom-color: #999;
+}
+
+#dojo {
+	
+}
+#dojo ul {
+    border: none;
+    width: auto;
+}
+
+#dojo ul li {
+    width: auto;
+    list-style: none;
+	font-size: 20pt;
+	font-family: "Arial Black";
+}
+
+/*
+.banner {
+	height: 198px;
+	width: 940px;
+	background-image: url(../images/banner.jpg);
+    background-image: url(http://dojorn.files.wordpress.com/2010/08/banner_0011.jpg);
+} */

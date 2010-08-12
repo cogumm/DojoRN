@@ -1,0 +1,20 @@
+login: &login
+  adapter: mysql
+  encoding: utf8
+  reconnect: false
+  pool: 5
+  username: root
+  password: safira
+  host: 127.0.0.1
+
+development:
+  <<: *login
+  database: dojorn_development
+
+test:
+  <<: *login
+  database: dojorn_test
+
+production:
+  <<: *login
+  database: dojorn_production

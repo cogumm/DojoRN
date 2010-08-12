@@ -1,0 +1,10 @@
+<% form_for @dojo do |f| %>
+
+  <%= render :partial => 'write', :locals => { :f => f } %>
+
+  <p>
+    <%= f.submit %>
+  </p>
+
+  <p><%= link_to 'voltar', @dojo %></p>
+<% end %>
